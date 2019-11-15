@@ -1,1 +1,367 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+}
+
+#chat-mensaje {
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.chat-input {
+    margin-top: 10px;
+}
+
+#map {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.w-full {
+    width:100% !important
+}
+
+.h-full {
+    height: 100% !important;
+}
+
+/*font sizes*/
+.font-size-12 {
+    font-size: 12px;
+}
+
+html, 
+body {
+    height: 100% !important;
+}
+
+.spacing-icon {
+    padding: 0 14px;
+}
+
+.flex-right {
+    flex: 1 1 auto;
+}
+
+.example-container {
+    width: 100%;
+    height: 100%;
+}
+.example-container2 {
+    width: 100%;
+    height: 100%;
+}
+  
+mat-drawer-content {
+    padding-top: 32px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.p-r-c {
+    padding-right: 0px;
+}
+.p-r-c2 {
+    padding-right: 30px;
+}
+
+.s-r-5 {
+    margin-right: 8px;
+}
+
+.W-300 {
+    width: 250px !important;
+    max-width: 250px !important;
+}
+.W-400 {
+    width: 450px !important;
+    max-width: 450px !important;
+}
+.p-lt {
+    top: 10px;
+    left: 25px;
+}
+
+.p-rt {
+    top: 12px !important;
+    right: 0px !important;
+}
+.p-lr-0{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.nb-theme-corporate nb-layout .layout {
+    background-color: #edf1f7;
+    color: #1a2138;
+    font-family: Open Sans, sans-serif;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    line-height: 1.25rem;
+    min-height: 100% !important;
+}
+.nb-theme-corporate p, .nb-theme-corporate .paragraph {
+    color: #1a2138;
+    font-family: Roboto !important; 
+    font: 400 11px Roboto, Arial, sans-serif;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+    line-height: 1.25rem;
+}
+.mat-nav-list a.active {
+    background: blue !important;
+}
+
+.mat-nav-list a.active {
+    background: blue !important;
+}
+.list-item-active {
+    font-weight: bold;
+    color: blue !important;
+    background: rgba(0, 0, 0, 0.04) !important;
+}
+.active {
+    background-color: blue;
+  }
+  
+  .navigate-active {
+    color: lightseagreen;
+  }
+  .active { border: solid; }
+.p-l-15 {
+    padding-left: 15px;
+}
+.left-30 {
+    left: 30px !important;
+}
+.left-15 {
+    left: 15px !important;
+}
+.example-tab-icon {
+    margin-right: 8px;
+  }
+  /* Structure */
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+.mat-progress-spinner.mat-warn circle, .mat-spinner.mat-warn circle {
+    stroke: #ffffff !important;
+}
+
+.mat-progress-spinner.mat-red circle, .mat-spinner.mat-red circle {
+    stroke: red !important;
+}
+
+/* Structure  LOANDING SPINNER*/
+.example-container1 {
+    position: relative;
+    height: -1px !important;
+    min-height: 200px;
+  }
+  
+.example-table-container {
+    position: relative;
+    max-height: 400px;
+    overflow: auto;
+}
+    
+.example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-rate-limit-reached {
+    color: #980000;
+    max-width: 360px;
+    text-align: center;
+}
+
+/*estilo tabla*/
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: rgb(189, 188, 188);
+}
+  
+tr.example-element-row:not(.example-expanded-row):active {
+    background: rgb(230, 230, 230);
+}
+
+tr.example-element-row:focus {
+    background: red !important;
+}
+
+td:focus {
+    background: red !important;
+}
+
+.z-index-1000 {
+    z-index: 1000 !important;
+}
+
+/* Default icon URLs */
+.leaflet-default-icon-path {
+    background-image: url(/assets/leaflet/images/marker-icon.png);
+}
+
+.leaflet-default-shadow-path {
+    background-image: url(/assets/leaflet/images/marker-shadow.png);
+}
+
+.mat-expansion-panel-body {
+    padding: 0px !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px grey; 
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c5c5c5; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+}
+
+.bg-default {
+    background: #f5f5f5;
+}
+.bg-default-primary {
+    background:#3f51b5;
+    color: white !important;
+}
+.mouse-hover:hover {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+.mouse-hover:active {
+    background-color: #3f51b5 !important;
+}
+.mouse-hover:hover > div {
+    
+}
+
+.mat-elevation-z6 {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.color-secondary {
+    color: #777777;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.truncar-direccion {
+    width:80%;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+}
+
+.example-section {
+    width: 94%;
+    height: 60px;
+  }
+
+  .example-margin {
+    margin: 0 10px;
+  }
+
+.leaflet-popup-content p {
+    margin-top: 0px !important;
+    margin-bottom: 16px !important;
+    line-height: 1.25rem;
+    font-family: Roboto !important;
+    font: 400 11px Roboto,Arial,sans-serif;
+    font-size: 13px !important;
+    font-weight: 300 !important;    
+}
+
+/*chat nebular*/
+::ng-deep nb-layout-column {
+    justify-content: center;
+    display: flex;
+}
+
+nb-chat {
+    width: 100%;
+}
+::ng-deep nb-layout-column {
+    display: flex;
+    justify-content: center;
+}
+
+.nb-theme-corporate nb-chat-message nb-chat-message-text .text {
+    padding: 1rem;
+    border-radius: 1rem !important;
+}
+[dir=ltr] .nb-theme-corporate nb-chat-message.not-reply nb-chat-message-text .text {
+    border-top-left-radius: 0 !important;
+}
+[dir=ltr] .nb-theme-corporate nb-chat-message.reply nb-chat-message-text .text {
+    border-top-right-radius: 0 !important;
+}
+
+.nb-theme-corporate nb-chat .header {
+    text-align: center;
+}
+
+.nb-theme-corporate nb-chat-message nb-chat-message-text p {
+    font-family: monospace !important;
+}
+.nb-theme-corporate nb-chat-message.not-reply nb-chat-message-text .text {
+    background: #3f51b5 !important;
+    color: #fff;
+}
+.nb-theme-corporate nb-chat-message.reply nb-chat-message-text .text {
+    background: #e4e4e4 !important;
+    color: #000000;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-green {
+    color: green;
+}
