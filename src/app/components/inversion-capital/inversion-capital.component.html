@@ -1,0 +1,45 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <mat-card>
+                <div class="row">
+                    <div class="col">
+                        Formulario dedicado a registrar las inversiones que los socios hacen a la empresa
+                        ya sea de dinero en efectivo o para mercaderia, la transacion se registra por separado
+                        y se tiene que 
+                    </div>
+                </div>
+                <br><br>
+                <div class="row">
+                    <div class="col">
+                        <h6 class="text-center">Inversion al negocio</h6>
+                        <mat-form-field>
+                            <span matPrefix>$&nbsp;</span>
+                            <mat-label>Ingresar cantidad</mat-label>
+                            <input matInput 
+                                    type="text" 
+                                    name="din"
+                                    id="din"
+                                    [(ngModel)]="dinCapital">
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarCapital()">Guardar transacción</button>
+                    </div>
+                    <div class="col">
+                        <h6 class="text-center">Inversion de mercadería</h6>
+                        <mat-form-field>
+                            <span matPrefix>$&nbsp;</span>
+                            <mat-label>Ingresar cantidad</mat-label>
+                            <input matInput
+                                    type="text" 
+                                    name="din2"
+                                    id="din2"
+                                    [(ngModel)]="dinMercaderia">
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarInversionInventario()">Guardar transacción</button>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

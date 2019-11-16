@@ -31,13 +31,35 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HomeComponent } from './pages/home/home.component';
+import { EstadosFinancierosComponent } from './components/estados-financieros/estados-financieros.component';
+import { InversionCapitalComponent } from './components/inversion-capital/inversion-capital.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { PagosComponent } from './components/pagos/pagos.component';
+import { ComprasComponent } from './components/compras/compras.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    EstadosFinancierosComponent,
+    InversionCapitalComponent,
+    DialogComponent,
+    PagosComponent,
+    ComprasComponent
   ],
+  entryComponents: [
+    EstadosFinancierosComponent,
+    InversionCapitalComponent,
+    DialogComponent,
+    PagosComponent,
+    ComprasComponent],
   imports: [
+    HttpClientModule,
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
