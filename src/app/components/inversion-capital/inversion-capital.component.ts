@@ -11,6 +11,8 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class InversionCapitalComponent implements OnInit {
   public dinCapital = '';
   public dinMercaderia = '';
+  public ifInversion = 0;
+  public ifInventario = 0;
 
   constructor(private http: HttpClient,
               private dialog: MatDialog) { }
@@ -19,41 +21,48 @@ export class InversionCapitalComponent implements OnInit {
   }
 
   ingresarCapital() {
+    this.ifInventario = 1;
 
     const data = {
       dinero: this.dinCapital
     };
+
     // http post
     // tslint:disable-next-line: max-line-length
-    this.http.post('http://157.230.134.78:5000/guardar-inversion', data).subscribe((response) => {
-     console.log(response['affectedRows']);
+    this.http.post('http://157.230.134.78:7500/guardar-inversion', data).subscribe((response) => {
 
-     if (response['affectedRows'] === 1) {
-      this.dinCapital = '';
-      this.openDialog('OK', 'Transaccion guardado correctamente');
-     } else {
-      this.openDialog('ERROR', 'Error al guardar la transacción');
-     }
-    }, (error) => {
-      console.log('error is ', error);
-    });
+      console.log(response['affectedRows']);
+
+      if (response['affectedRows'] === 1) {
+        this.dinCapital = '';
+        this.openDialog('OK', 'Transaccion guardado correctamente');
+        this.ifInventario = 0;
+      } else {
+        this.openDialog('ERROR', 'Error al guardar la transacción');
+        this.ifInventario = 0;
+      }
+      }, (error) => {
+        console.log('error is ', error);
+      });
   }
 
   ingresarInversionInventario() {
-
+    this.ifInventario = 1;
     const data = {
       dinero: this.dinMercaderia
     };
     // http post
     // tslint:disable-next-line: max-line-length
-    this.http.post('http://157.230.134.78:5000/inversion-inventario', data).subscribe((response) => {
+    this.http.post('http://157.230.134.78:7500/inversion-inventario', data).subscribe((response) => {
      console.log(response['affectedRows']);
 
      if (response['affectedRows'] === 1) {
       this.dinMercaderia = '';
       this.openDialog('OK', 'Transaccion guardado correctamente');
+      this.ifInventario = 0;
      } else {
       this.openDialog('ERROR', 'Error al guardar la transacción');
+      this.ifInventario = 0;
      }
     }, (error) => {
       console.log('error is ', error);

@@ -23,7 +23,12 @@
                                     id="din"
                                     [(ngModel)]="dinCapital">
                         </mat-form-field>
-                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarCapital()">Guardar transacción</button>
+                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarCapital()">
+                                <mat-icon>
+                                    <mat-spinner color="accent" diameter="20" *ngIf="ifInversion === 1">
+                                    </mat-spinner>
+                                </mat-icon>
+                            Guardar transacción</button>
                     </div>
                     <div class="col">
                         <h6 class="text-center">Inversion de mercadería</h6>
@@ -36,7 +41,13 @@
                                     id="din2"
                                     [(ngModel)]="dinMercaderia">
                         </mat-form-field>
-                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarInversionInventario()">Guardar transacción</button>
+                        <button mat-raised-button color="primary" class="w-100" (click)="ingresarInversionInventario()">
+                                <mat-icon>
+                                    <mat-spinner color="accent" diameter="20" *ngIf="ifInventario === 1">
+                                    </mat-spinner>
+                                </mat-icon>
+                            Guardar transacción
+                        </button>
                     </div>
                 </div>
             </mat-card>
