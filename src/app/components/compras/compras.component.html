@@ -27,9 +27,6 @@
                                     <mat-option  value="1">
                                        Insumos
                                     </mat-option>
-                                    <mat-option  value="2">
-                                        cuenta 3
-                                    </mat-option>
                                 </mat-select>
                             </mat-form-field>
                             <mat-form-field>
@@ -39,9 +36,9 @@
                                         type="text" 
                                         name="din"
                                         id="din"
-                                        [(ngModel)]="dinPago"> 
+                                        [(ngModel)]="dinCompraCredito"> 
                             </mat-form-field>
-                            <button mat-raised-button color="primary" class="w-100" (click)="ingresarPago()">Guardar transacción</button>
+                            <button mat-raised-button color="primary" class="w-100" (click)="ingresarCompraCredito()">Guardar transacción</button>
                         </mat-card>
                     </mat-tab>
                     <mat-tab label="Contado"> Content 2 </mat-tab>

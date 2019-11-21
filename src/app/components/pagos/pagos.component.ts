@@ -52,7 +52,7 @@ export class PagosComponent implements OnInit {
 
     const fConcat =  this.fecha.getFullYear() + '-' + (this.fecha.getMonth() + 1) + '-' + this.fecha.getDate();
     // console.log(fConcat);
-    // console.log('selected' + this.selected);
+    console.log('selected' + this.selected);
     // console.log(this.dinPago);
 
     const data = {
