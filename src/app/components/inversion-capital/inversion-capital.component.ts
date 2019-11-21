@@ -29,7 +29,7 @@ export class InversionCapitalComponent implements OnInit {
 
     // http post
     // tslint:disable-next-line: max-line-length
-    this.http.post('http://157.230.134.78:7500/guardar-inversion', data).subscribe((response) => {
+    this.http.post('http://157.230.134.78:5000/guardar-inversion', data).subscribe((response) => {
 
       console.log(response['affectedRows']);
 
