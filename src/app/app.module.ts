@@ -39,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { PagosComponent } from './components/pagos/pagos.component';
 import { ComprasComponent } from './components/compras/compras.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 @NgModule({
   declarations: [
@@ -49,14 +50,16 @@ import { ComprasComponent } from './components/compras/compras.component';
     InversionCapitalComponent,
     DialogComponent,
     PagosComponent,
-    ComprasComponent
+    ComprasComponent,
+    VentasComponent
   ],
   entryComponents: [
     EstadosFinancierosComponent,
     InversionCapitalComponent,
     DialogComponent,
     PagosComponent,
-    ComprasComponent],
+    ComprasComponent,
+    VentasComponent],
   imports: [
     HttpClientModule,
     FormsModule,

@@ -22,24 +22,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr *ngFor="let cuenta of balanceComprobacion">
                                                 <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <td>{{ cuenta.nombre }}</td>
+                                                <td>{{ cuenta.deudor }}</td>
+                                                <td>{{ cuenta.acreedor }}</td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
+                                                    <th scope="row"></th>
+                                                    <td>Total</td>
+                                                    <td>{{ tCDebe }}</td>
+                                                    <td>{{ tCHaber }}</td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </mat-card>

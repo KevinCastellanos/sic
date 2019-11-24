@@ -13,18 +13,22 @@ export class InversionCapitalComponent implements OnInit {
   public dinMercaderia = '';
   public ifInversion = 0;
   public ifInventario = 0;
+  public fecha = new Date();
+  public fe = '';
 
   constructor(private http: HttpClient,
               private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.fe = this.fecha.getFullYear() + '-' + (this.fecha.getMonth() + 1) + '-' + this.fecha.getDate();
   }
 
   ingresarCapital() {
     this.ifInventario = 1;
 
     const data = {
-      dinero: this.dinCapital
+      dinero: this.dinCapital,
+      fecha: this.fe
     };
 
     // http post

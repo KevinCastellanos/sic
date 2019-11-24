@@ -17,7 +17,7 @@
                         <mat-card>
                             <h6 class="text-center">Formulario de compras al credito</h6>
                             <mat-form-field>
-                                <input matInput [matDatepicker]="dp3" placeholder="Fecha"  [(ngModel)]="fecha" disabled>
+                                <input matInput [matDatepicker]="dp3" placeholder="Fecha"  [(ngModel)]="fechaCredito" disabled>
                                 <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
                                 <mat-datepicker #dp3 disabled="false"></mat-datepicker>
                             </mat-form-field>
@@ -27,8 +27,22 @@
                                     <mat-option  value="1">
                                        Insumos
                                     </mat-option>
+                                    <mat-option  value="2">
+                                        Mercaderia
+                                    </mat-option>
                                 </mat-select>
                             </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Código de factura</mat-label>
+                                <input matInput 
+                                        type="text" 
+                                        name="cod"
+                                        id="cod"
+                                        [(ngModel)]="codigoCredito"> 
+                            </mat-form-field>
+                            <mat-form-field>
+                                <textarea matInput placeholder="Descripción" [(ngModel)]="descripcionCredito"></textarea>
+                              </mat-form-field>
                             <mat-form-field>
                                 <span matPrefix>$&nbsp;</span>
                                 <mat-label>Ingresar cantidad</mat-label>
@@ -41,7 +55,48 @@
                             <button mat-raised-button color="primary" class="w-100" (click)="ingresarCompraCredito()">Guardar transacción</button>
                         </mat-card>
                     </mat-tab>
-                    <mat-tab label="Contado"> Content 2 </mat-tab>
+                    <mat-tab label="Contado">
+                        <mat-card>
+                            <h6 class="text-center">Formulario de compras al contado</h6>
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="dp4" placeholder="Fecha"  [(ngModel)]="fechaContado" disabled>
+                                <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+                                <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Seleccione cuenta</mat-label>
+                                <mat-select [(value)]="selectedContado">
+                                    <mat-option  value="1">
+                                       Insumos
+                                    </mat-option>
+                                    <mat-option  value="2">
+                                        Mercaderia
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Código de factura</mat-label>
+                                <input matInput 
+                                        type="text" 
+                                        name="cod"
+                                        id="cod"
+                                        [(ngModel)]="codigoContado"> 
+                            </mat-form-field>
+                            <mat-form-field>
+                                <textarea matInput placeholder="Descripción" [(ngModel)]="descripcionContado"></textarea>
+                              </mat-form-field>
+                            <mat-form-field>
+                                <span matPrefix>$&nbsp;</span>
+                                <mat-label>Ingresar cantidad</mat-label>
+                                <input matInput 
+                                        type="text" 
+                                        name="din"
+                                        id="din"
+                                        [(ngModel)]="dinCompraContado"> 
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" class="w-100" (click)="ingresarComprasAlContado()">Guardar transacción</button>
+                        </mat-card>
+                    </mat-tab>
                 </mat-tab-group>
             </mat-card>
         </div>

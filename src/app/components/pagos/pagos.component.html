@@ -21,15 +21,40 @@
                         </mat-form-field>
                         <mat-form-field>
                             <mat-label>Seleccione cuenta</mat-label>
-                            <mat-select [(value)]="selected">
+                            <mat-select (selectionChange)="onChange($event)">
                                 <mat-option  value="1">
                                     Local
                                 </mat-option>
                                 <mat-option  value="2">
-                                    cuenta 3
+                                    Cuentas por pagar
+                                </mat-option>
+                                <mat-option  value="3">
+                                    Fletes
+                                </mat-option>
+                                <mat-option  value="4">
+                                    Desarolladores
+                                </mat-option>
+                                <mat-option  value="5">
+                                    Administracion
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
+                        <div *ngIf="ver === true">
+                            <p>
+                                A continuacion se detallan las transacciones que aun no han sido canceladas.
+                            </p>
+                            <mat-form-field >
+                                <mat-label>Seleccione transacción</mat-label>
+                                <mat-select [(value)]="selectedTrans">
+                                    <ng-container *ngFor="let trans of transPorPagar">
+                                        <mat-option [value]="trans.codigo" *ngIf="trans.cancelado === 'no'">
+                                            cod: {{ trans.codigo }} / $ {{ trans.haber }} / detalle: {{ trans.detalle }}
+                                        </mat-option>
+                                    </ng-container>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        
                         <mat-form-field>
                             <span matPrefix>$&nbsp;</span>
                             <mat-label>Ingresar cantidad</mat-label>

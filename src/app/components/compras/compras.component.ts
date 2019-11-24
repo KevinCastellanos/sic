@@ -12,11 +12,15 @@ export class ComprasComponent implements OnInit {
 
   public fechaCredito: Date;
   public dinCompraCredito = '';
+  public descripcionCredito = '';
   public selectedCredito = '';
+  public codigoCredito = '';
 
   public fechaContado: Date;
   public dinCompraContado = '';
+  public descripcionContado = '';
   public selectedContado = '';
+  public codigoContado = '';
 
   constructor(private dialog: MatDialog,
               private http: HttpClient) { }
@@ -30,7 +34,13 @@ export class ComprasComponent implements OnInit {
 
       switch (this.selectedCredito) {
         case '1':
-          this.compraInsumoCredito();
+          // tslint:disable-next-line: max-line-length
+          this.compraC('catalogo_insumo', 'catalogo_iva_credito_fiscal', 'catalogo_por_pagar', this.descripcionCredito, this.codigoCredito, this.dinCompraCredito);
+          break;
+        case '2':
+          // this.compraMercaderiaCredito();
+          // tslint:disable-next-line: max-line-length
+          this.compraC('catalogo_mercaderia', 'catalogo_iva_credito_fiscal', 'catalogo_por_pagar', this.descripcionCredito, this.codigoCredito, this.dinCompraCredito);
           break;
       }
     } else {
@@ -42,9 +52,16 @@ export class ComprasComponent implements OnInit {
 
     if (this.fechaContado !== undefined) {
 
-      switch (this.selectedCredito) {
+      switch (this.selectedContado) {
         case '1':
-          this.compraInsumoContado();
+          // insumos
+          // tslint:disable-next-line: max-line-length
+          this.compra('catalogo_insumo', 'catalogo_iva_credito_fiscal', 'catalogo_efectivo', this.descripcionContado, this.codigoContado, this.dinCompraContado);
+          break;
+        case '2':
+          // mercaderia
+          // tslint:disable-next-line: max-line-length
+          this.compra('catalogo_mercaderia', 'catalogo_iva_credito_fiscal', 'catalogo_efectivo', this.descripcionContado, this.codigoContado, this.dinCompraContado);
           break;
       }
     } else {
@@ -52,24 +69,38 @@ export class ComprasComponent implements OnInit {
     }
   }
 
-  compraInsumoContado() {
+  compra(cCompra: string, cIva: string, cSalida, cDetalle: string, cCodigo: string, din: string) {
 
-    const fConcat =  this.fecha.getFullYear() + '-' + (this.fecha.getMonth() + 1) + '-' + this.fecha.getDate();
+    const fConcat =  this.fechaContado.getFullYear() + '-' + (this.fechaContado.getMonth() + 1) + '-' + this.fechaContado.getDate();
+
     // console.log(fConcat);
     // console.log('selected' + this.selected);
     // console.log(this.dinPago);
 
     const data = {
-      dinero: this.dinCompraCredito,
+      cuentaCompra: cCompra,
+      cuentaIVaFiscal: cIva,
+      cuentaSalida: cSalida,
+      dinero: din,
       fecha: fConcat,
+      detalle: cDetalle,
+      codigo: cCodigo
     };
 
-    this.http.post('http://157.230.134.78:5000/compra-insumo-contado', data).subscribe((response) => {
+    this.http.post('http://157.230.134.78:5000/compra-contado', data).subscribe((response) => {
      // console.log(response['affectedRows']);
 
      // tslint:disable-next-line: no-string-literal
      if (response['affectedRows'] === 1) {
+
+      this.dinCompraContado = '';
+      this.codigoContado = '';
+      this.descripcionContado = '';
+
       this.dinCompraCredito = '';
+      this.codigoCredito = '';
+      this.descripcionCredito = '';
+
       this.openDialog('OK', 'Transaccion guardado correctamente');
      } else {
       this.openDialog('ERROR', 'Error al guardar la transacción');
@@ -80,7 +111,45 @@ export class ComprasComponent implements OnInit {
 
   }
 
-  compraInsumoCredito() {
+  compraC(cCompra: string, cIva: string, cSalida, cDetalle: string, cCodigo: string, din: string) {
+
+    const fConcat =  this.fechaCredito.getFullYear() + '-' + (this.fechaCredito.getMonth() + 1) + '-' + this.fechaCredito.getDate();
+
+    // console.log(fConcat);
+    // console.log('selected' + this.selected);
+    // console.log(this.dinPago);
+
+    const data = {
+      cuentaCompra: cCompra,
+      cuentaIVaFiscal: cIva,
+      cuentaSalida: cSalida,
+      dinero: din,
+      fecha: fConcat,
+      detalle: cDetalle,
+      codigo: cCodigo
+    };
+
+    this.http.post('http://157.230.134.78:5000/compra-contado', data).subscribe((response) => {
+     // console.log(response['affectedRows']);
+
+     // tslint:disable-next-line: no-string-literal
+     if (response['affectedRows'] === 1) {
+
+      this.dinCompraContado = '';
+      this.codigoContado = '';
+      this.descripcionContado = '';
+
+      this.dinCompraCredito = '';
+      this.codigoCredito = '';
+      this.descripcionCredito = '';
+
+      this.openDialog('OK', 'Transaccion guardado correctamente');
+     } else {
+      this.openDialog('ERROR', 'Error al guardar la transacción');
+     }
+    }, (error) => {
+      console.log('error is ', error);
+    });
 
   }
 

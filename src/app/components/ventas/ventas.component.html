@@ -1,0 +1,96 @@
+<br><br>
+<div class='container'>
+    <div class='row'>
+        <div class='col'>
+            <mat-card>
+                <div class="row">
+                    <div class="col">
+                        Módulo especializado a realizar transacciones de ventas.
+                    </div>
+                    <div class="col text-right">
+                        Ventas por servicios
+                    </div>
+                </div>
+            </mat-card>
+            <br>
+            <mat-card>
+                <h6 style="background:cyan; padding: 20px;">
+                    Comprobante de información registrada
+                </h6>
+                <br>
+                <p>
+                   Transacción:  <strong>Transacción Emisión de recibo por servicios Tkontrol</strong>
+                </p>
+                <p>
+                    N° operacion: <strong>{{ code }}</strong>
+                </p>
+                <div style="margin: 10px; border: 1px solid black !important; border-radius: 5px;padding: 15px;">
+                    <div class='row'>
+                        <div class='col'>
+                            <h4>El Salvador Apparel Solutions</h4>
+                            <p>
+                                Residencial Don Bosco, pasaje N° 3,casa N° 11, Santa Tecla, El Salvador.
+                            </p>
+                            <p>
+                                Tel: 2250-3664
+                            </p>
+                            <p>
+                                Fecha: {{ fe }}
+                            </p>
+                        </div>
+                        <div class='col'>
+                            <div style="border: 1px solid black !important;padding: 15px;">
+                                <p>
+                                    RECIBO POR SERVICIOS
+                                </p>
+                                <p>
+                                    N° {{ code }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-6'>
+                            <mat-form-field>
+                                <input matInput placeholder="Recibi de" 
+                                        type="text" 
+                                        name="nombre"
+                                        id="nombre"
+                                        [(ngModel)]="nombre">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <input matInput placeholder="Concepto de"
+                                                type="text" 
+                                                name="concepto"
+                                                id="concepto"
+                                                [(ngModel)]="concepto">
+                            </mat-form-field>
+                            <mat-form-field>
+                                <span matPrefix>$&nbsp;</span>
+                                <input matInput placeholder="Cantidad de" 
+                                        type="text" 
+                                        (keydown)=onKeydownEvent($event)>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class='col d-flex align-items-center'>
+                            <button mat-raised-button color="primary" class="w-100" (click)="ingresarVenta()">Guardar transacción</button>
+                        </div>
+                        <div class="col">
+                            <p class='text-right' style="margin-right: 15px;">
+                                Cantidad: $ {{ cantidad }}
+                            </p>
+                            <p class='text-right' style="margin-right: 15px;"> 
+                                IVA: $ {{ iva }}
+                            </p>
+                            <p class='text-right' style="margin-right: 15px;">
+                                Total a pagar: $ {{ total }} 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

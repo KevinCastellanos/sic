@@ -64,11 +64,24 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <br>
-                                    <mat-list>
-                                        <mat-list-item><mat-icon style="margin-right: 60px;">dashboard</mat-icon> <strong>Modulos</strong></mat-list-item>                       
+                                    <br><br>
+                                    <mat-list style="background: rgb(219, 219, 219); padding-bottom: 8px;">
+                                        <mat-list-item><mat-icon style="margin-right: 15px;">toc</mat-icon> <strong>Modulos</strong></mat-list-item>                       
                                     </mat-list>
                                     <mat-nav-list>
+                                        <mat-list-item >
+                                            <a matLine href="#">Dashboard</a>
+                                            <button mat-icon-button >
+                                                <mat-icon>dashboard</mat-icon>
+                                            </button>
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item >
+                                            <a matLine href="#" >Cuentas</a>
+                                            <button mat-icon-button >
+                                                <mat-icon>view_list</mat-icon>
+                                            </button>
+                                        </mat-list-item>
                                         <mat-divider></mat-divider>
                                         <mat-list-item >
                                             <a matLine href="#" (click)="obtenerInversionCapital()">Inversion a la empresa</a>
@@ -88,6 +101,32 @@
                                            <a matLine href="#" (click)="obtenerModuloCompras()">Compras</a>
                                            <button mat-icon-button >
                                               <mat-icon>add_shopping_cart</mat-icon>
+                                           </button>
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item >
+                                           <a matLine href="#" (click)="obtenerModuloVentas()">Ventas</a>
+                                           <button mat-icon-button >
+                                              <mat-icon>monetization_ons</mat-icon>
+                                           </button>
+                                        </mat-list-item>
+                                    </mat-nav-list>
+                                    <mat-list style="background: rgb(219, 219, 219); padding-bottom: 8px;">
+                                        <mat-list-item><mat-icon style="margin-right: 15px;">bar_chart</mat-icon> <strong>Reportes</strong></mat-list-item>                       
+                                    </mat-list>
+                                    <mat-nav-list>
+                                        
+                                        <mat-list-item >
+                                           <a matLine href="#">Gastos</a>
+                                           <button mat-icon-button >
+                                              <mat-icon>remove</mat-icon>
+                                           </button>
+                                        </mat-list-item>
+                                        <mat-divider></mat-divider>
+                                        <mat-list-item >
+                                           <a matLine href="#">Ingresos</a>
+                                           <button mat-icon-button >
+                                              <mat-icon>add</mat-icon>
                                            </button>
                                         </mat-list-item>
                                         <mat-divider></mat-divider>
